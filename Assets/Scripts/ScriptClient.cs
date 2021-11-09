@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ScriptClient : MonoBehaviour
 {
@@ -26,6 +27,16 @@ public class ScriptClient : MonoBehaviour
             if(Vector3.Distance(transform.position, prefabPointClient.transform.position).Equals(0))
                 clickUp = true;
         }
+        else if(sit)
+        {
+            Slider slider = transform.GetChild(0).GetChild(0).GetComponent<Slider>();
+            slider.enabled = true;
+            slider.value += Time.deltaTime;
+            if (slider.value > slider.maxValue)
+            {
+                slider.enabled = false;
+            }
+        }
     }
 
     private void OnMouseUp()
@@ -42,9 +53,6 @@ public class ScriptClient : MonoBehaviour
                 clickUp = false;
                 sit = true;
             } 
-        } else if (sit)
-        {
-
-        }
+        } 
     }
 }
