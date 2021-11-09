@@ -9,6 +9,8 @@ public class ScriptClient : MonoBehaviour
     GameObject prefabPointClient;
     float speed = 5f;
     bool clickUp = false;
+    [SerializeField]
+    bool sit = false;
 
     private void Start()
     {
@@ -18,7 +20,7 @@ public class ScriptClient : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (manager.createClient)
+        if (manager.createClient && !sit)
         {
             transform.position = Vector3.MoveTowards(transform.position, prefabPointClient.transform.position, speed*Time.deltaTime);
             if(Vector3.Distance(transform.position, prefabPointClient.transform.position).Equals(0))
@@ -28,9 +30,8 @@ public class ScriptClient : MonoBehaviour
 
     private void OnMouseUp()
     {
-        if (clickUp)
+        if (clickUp && !sit)
         {
-
             IEnumerable<GameObject> chainList = GameObject.FindGameObjectsWithTag("Chain").Where(p => p.GetComponent<ScriptChain>().free == true);
             if (!chainList.Count().Equals(0))
             {
@@ -39,7 +40,11 @@ public class ScriptClient : MonoBehaviour
                 scriptChain.free = false;
                 manager.createClient = false;
                 clickUp = false;
+                sit = true;
             } 
+        } else if (sit)
+        {
+
         }
     }
 }
