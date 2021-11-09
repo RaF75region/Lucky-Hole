@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4816740886870148398}
   - component: {fileID: 4816740886870148399}
   - component: {fileID: 4816740886870148392}
-  - component: {fileID: 4816740886870148393}
   m_Layer: 0
   m_Name: Table
   m_TagString: Untagged
@@ -88,19 +87,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4816740886870148393
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4816740886870148394}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4816740886937793314
 GameObject:
   m_ObjectHideFlags: 0
@@ -112,7 +98,7 @@ GameObject:
   - component: {fileID: 4816740886937793313}
   - component: {fileID: 4816740886937793318}
   - component: {fileID: 4816740886937793319}
-  - component: {fileID: 4816740886937793312}
+  - component: {fileID: 1785034020495708083}
   m_Layer: 3
   m_Name: Chain (5)
   m_TagString: Untagged
@@ -183,7 +169,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4816740886937793312
+--- !u!65 &1785034020495708083
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -191,11 +177,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4816740886937793314}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0, z: 0.00000023841858}
 --- !u!1 &4816740887292669555
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,7 +193,7 @@ GameObject:
   - component: {fileID: 4816740887292669554}
   - component: {fileID: 4816740887292669559}
   - component: {fileID: 4816740887292669552}
-  - component: {fileID: 4816740887292669553}
+  - component: {fileID: 1416308017847452179}
   m_Layer: 3
   m_Name: Chain (4)
   m_TagString: Untagged
@@ -278,7 +264,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4816740887292669553
+--- !u!65 &1416308017847452179
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -286,7 +272,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4816740887292669555}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -302,7 +288,7 @@ GameObject:
   - component: {fileID: 4816740887629501304}
   - component: {fileID: 4816740887629501309}
   - component: {fileID: 4816740887629501310}
-  - component: {fileID: 4816740887629501311}
+  - component: {fileID: 1040263324241341098}
   m_Layer: 3
   m_Name: Chain (3)
   m_TagString: Untagged
@@ -373,7 +359,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4816740887629501311
+--- !u!65 &1040263324241341098
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -381,7 +367,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4816740887629501305}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -397,7 +383,7 @@ GameObject:
   - component: {fileID: 4816740887985858554}
   - component: {fileID: 4816740887985858559}
   - component: {fileID: 4816740887985858552}
-  - component: {fileID: 4816740887985858553}
+  - component: {fileID: 2040829883091958774}
   m_Layer: 3
   m_Name: Chain
   m_TagString: Untagged
@@ -468,7 +454,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4816740887985858553
+--- !u!65 &2040829883091958774
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -476,11 +462,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4816740887985858555}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0, z: 0.00000047683716}
 --- !u!1 &4816740888488064496
 GameObject:
   m_ObjectHideFlags: 0
@@ -492,7 +478,7 @@ GameObject:
   - component: {fileID: 4816740888488064503}
   - component: {fileID: 4816740888488064500}
   - component: {fileID: 4816740888488064501}
-  - component: {fileID: 4816740888488064502}
+  - component: {fileID: 2282527367582598168}
   m_Layer: 3
   m_Name: Chain (1)
   m_TagString: Untagged
@@ -563,7 +549,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4816740888488064502
+--- !u!65 &2282527367582598168
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -571,7 +557,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4816740888488064496}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -587,7 +573,7 @@ GameObject:
   - component: {fileID: 4816740888926191875}
   - component: {fileID: 4816740888926191872}
   - component: {fileID: 4816740888926191873}
-  - component: {fileID: 4816740888926191874}
+  - component: {fileID: 3016302306470690097}
   m_Layer: 3
   m_Name: Chain (2)
   m_TagString: Untagged
@@ -658,7 +644,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4816740888926191874
+--- !u!65 &3016302306470690097
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -666,8 +652,8 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4816740888926191900}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0, z: 0.00000047683716}
