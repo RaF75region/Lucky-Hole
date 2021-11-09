@@ -6,10 +6,8 @@ public class GameManager : MonoBehaviour
 {
     [Header("Client")]
     public GameObject prefabClient;
-    public GameObject PrefabPointClient;
     public float timerRespawn;
-    [SerializeField]
-    bool createClient = false;
+    public bool createClient = false;
 
 
     // Start is called before the first frame update
