@@ -11,31 +11,26 @@ public class ScriptClient : MonoBehaviour
     float speed = 5f;
     bool clickUp = false;
     [SerializeField]
-    bool sit = false;
+    bool sit = false;//no sit
+    Slider slider;
 
     private void Start()
     {
         manager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>(); //GetComponent<GameManager>();
         prefabPointClient = GameObject.FindGameObjectWithTag("Point move client");
+        slider = transform.GetChild(0).GetChild(0).GetComponent<Slider>();
     }
     // Update is called once per frame
     void Update()
     {
         if (manager.createClient && !sit)
         {
-            transform.position = Vector3.MoveTowards(transform.position, prefabPointClient.transform.position, speed*Time.deltaTime);
-            if(Vector3.Distance(transform.position, prefabPointClient.transform.position).Equals(0))
+            transform.position = Vector3.MoveTowards(transform.position, prefabPointClient.transform.position, speed * Time.deltaTime);
+            if (Vector3.Distance(transform.position, prefabPointClient.transform.position).Equals(0))
                 clickUp = true;
-        }
-        else if(sit)
+        } else if (sit)
         {
-            Slider slider = transform.GetChild(0).GetChild(0).GetComponent<Slider>();
-            slider.enabled = true;
-            slider.value += Time.deltaTime;
-            if (slider.value > slider.maxValue)
-            {
-                slider.enabled = false;
-            }
+            SliderToActive();
         }
     }
 
@@ -52,7 +47,12 @@ public class ScriptClient : MonoBehaviour
                 manager.createClient = false;
                 clickUp = false;
                 sit = true;
-            } 
-        } 
+            }
+        }
+    }
+
+    private void SliderToActive()
+    {
+        slider.gameObject.SetActive(true);
     }
 }

@@ -9,14 +9,11 @@ public class GameManager : MonoBehaviour
     public float timerRespawn;
     public bool createClient = false;
 
-
-    // Start is called before the first frame update
     void Start()
     {
         timerRespawn = Random.Range(3f, 7f);
     }
 
-    // Update is called once per frame
     void Update()
     {
         RespawnClient();

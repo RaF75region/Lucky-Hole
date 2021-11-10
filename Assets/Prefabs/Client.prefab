@@ -146,6 +146,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2096640597333056036}
   - component: {fileID: 2223026995405734661}
+  - component: {fileID: 8558163129805446153}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -225,6 +226,18 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &8558163129805446153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6030480073771343928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 065e3b73b25f54840b375c3bf3badfc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7502040632675782440
 GameObject:
   m_ObjectHideFlags: 0
@@ -313,7 +326,7 @@ GameObject:
   - component: {fileID: 3938675425514616303}
   m_Layer: 5
   m_Name: Fill
-  m_TagString: Untagged
+  m_TagString: ImageSilderClient
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -358,7 +371,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7781252, g: 0.7830189, b: 0.21052866, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
