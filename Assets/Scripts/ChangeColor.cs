@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class ChangeColor : MonoBehaviour
 {
-    bool trigger=true;
-    // Update is called once per frame
+    public bool trigger=true;
+
     void Update()
     {
         if (gameObject.activeSelf && trigger)
@@ -16,7 +16,6 @@ public class ChangeColor : MonoBehaviour
             if (slider.value >= slider.maxValue)
             {
                 Image image = slider.transform.GetChild(1).GetChild(0).GetComponent<Image>();
-                print(image.color);
                 image.color = Color.green;
                 trigger = false;
             }

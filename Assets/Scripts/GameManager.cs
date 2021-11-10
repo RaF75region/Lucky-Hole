@@ -4,10 +4,18 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    [System.Serializable]
+    public struct Client
+    {
+        public GameObject ObjClient { get; set; }
+        public bool StatusOrder { get; set; }
+    }
+
     [Header("Client")]
     public GameObject prefabClient;
     public float timerRespawn;
     public bool createClient = false;
+    public List<Client> clients = new List<Client>();    
 
     void Start()
     {
@@ -31,5 +39,13 @@ public class GameManager : MonoBehaviour
                 createClient = true;
             }
         }
+    }
+
+    public void AddClient(GameObject client, bool statusOrder)
+    {
+        Client cl=new Client();
+        cl.ObjClient = client;
+        cl.StatusOrder = statusOrder;
+        clients.Add(cl);
     }
 }

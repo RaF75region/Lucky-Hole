@@ -238,6 +238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 065e3b73b25f54840b375c3bf3badfc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  trigger: 1
 --- !u!1 &7502040632675782440
 GameObject:
   m_ObjectHideFlags: 0
@@ -498,3 +499,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sit: 0
+  thinkOrder: 0
