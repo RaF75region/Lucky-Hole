@@ -33,7 +33,7 @@ public class ScriptClient : MonoBehaviour
     
     void Update()
     {
-        clientWork((ClientState)State);
+        clientWork(1);
         //if (!sit)
         //{
         //    transform.position = Vector3.MoveTowards(transform.position, prefabPointClient.transform.position, speed * Time.deltaTime);
@@ -45,9 +45,14 @@ public class ScriptClient : MonoBehaviour
         //}
     }
 
-    private void clientWork(ClientState clientState)
+    private void clientWork(ushort clientState)
     {
-
+        switch ((ClientState)clientState)
+        {
+            case ClientState.sit:
+                print((ClientState)clientState);
+                break;
+        }
     }
 
     private void OnMouseUp()
@@ -72,7 +77,7 @@ public class ScriptClient : MonoBehaviour
         slider.gameObject.SetActive(true);
         if (!slider.GetComponent<ChangeColor>().trigger)
         {
-            manager.AddClient(transform.gameObject, true);
+           // manager.AddClient(transform.gameObject, true);
             slider.GetComponent<ChangeColor>().trigger = true;
         }
     }
