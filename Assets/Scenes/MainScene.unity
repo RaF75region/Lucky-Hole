@@ -156,6 +156,7 @@ MonoBehaviour:
     type: 3}
   timerRespawn: 0
   createClient: 0
+  statusClient: 0
   clients: []
 --- !u!4 &161701993
 Transform:
