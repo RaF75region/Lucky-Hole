@@ -58,7 +58,6 @@ public class ScriptClient : MonoBehaviour
         switch ((ClientState)clientState)
         {
             case ClientState.create:
-                //Transform childClient=transform.GetChild(0).position
                 transform.position = Vector3.MoveTowards(transform.position, prefabPointClient.transform.position, speed * Time.deltaTime);
                 if (Vector3.Distance(transform.position, prefabPointClient.transform.position).Equals(0))
                     refClient.StatusOrder = ClientState.waiting;
@@ -76,6 +75,7 @@ public class ScriptClient : MonoBehaviour
             case ClientState.sit:
                 navMeshAgent = GetComponent<NavMeshAgent>();
                 navMeshAgent.SetDestination(scriptChain.gameObject.transform.position);
+                
                 if (!navMeshAgent.pathPending && navMeshAgent.remainingDistance.Equals(0))
                 {
                     refClient.StatusOrder = ClientState.thinkOrder;
@@ -83,9 +83,6 @@ public class ScriptClient : MonoBehaviour
                 break;
             case ClientState.thinkOrder:
                 SliderToActive();
-                navMeshAgent.enabled = false;
-                navMeshObs = gameObject.GetComponent<NavMeshObstacle>();
-                navMeshObs.enabled = true;
                 break;
         }
     }
@@ -102,6 +99,14 @@ public class ScriptClient : MonoBehaviour
         {
             slider.GetComponent<ChangeColor>().trigger = true;
             refClient.StatusOrder = ClientState.waiting;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject == scriptChain.gameObject)
+        {
+            navMeshAgent.obstacleAvoidanceType = ObstacleAvoidanceType.NoObstacleAvoidance;
         }
     }
 }
