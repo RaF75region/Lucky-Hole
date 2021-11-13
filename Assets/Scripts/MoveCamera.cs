@@ -16,14 +16,9 @@ public class MoveCamera : MonoBehaviour
         Vector3 position = transform.position;
         position.x += xMove;
         position.z += zMove;
-        position.x = Mathf.Clamp(position.x, -boundsX, boundsX);
-        position.z = Mathf.Clamp(position.z, -boundsZ, boundsZ);
+        position.x = Mathf.Clamp(position.x, 0, boundsX);
+        position.z = Mathf.Clamp(position.z, 0, boundsZ);
         transform.position = position;
 
-        
-
-
-
-        print(transform.GetChild(0).GetComponent<Camera>().fieldOfView);
     }
 }
