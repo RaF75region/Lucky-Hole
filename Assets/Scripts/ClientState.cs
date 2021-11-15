@@ -6,4 +6,5 @@ public enum ClientState : ushort
     sit,
     thinkOrder,
     waitWaiter,
+    transferOrder,
 }

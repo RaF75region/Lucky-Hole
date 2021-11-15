@@ -6,12 +6,6 @@ using System.Linq;
 
 public class GameManager : MonoBehaviour
 {
-    //[Serializable]
-    //public struct Client
-    //{
-    //    public GameObject ObjClient;
-    //    public ClientState StatusOrder;
-    //}
 
     [Header("Client")]
     public GameObject prefabClient;
@@ -53,6 +47,13 @@ public class GameManager : MonoBehaviour
         cl.ObjClient = client;
         cl.StatusOrder = statusClients;
         clients.Add(cl);
+    }
+
+    public void ChangeChaing(GameObject client, GameObject obj)
+    {
+        ClassClient cl = clients.Where(p => p.ObjClient == client).ElementAt(0);
+        if (!cl.Chain)
+            cl.Chain = obj;
     }
 
     public void ChaingeStatus(GameObject client, ushort state)
