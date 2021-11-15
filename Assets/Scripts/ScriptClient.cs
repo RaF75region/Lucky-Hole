@@ -66,7 +66,8 @@ public class ScriptClient : MonoBehaviour
                 IEnumerable<GameObject> chainList = GameObject.FindGameObjectsWithTag("Chain").Where(p => p.GetComponent<ScriptChain>().free == true);
                 if (!chainList.Count().Equals(0))
                 {
-                    scriptChain = chainList.ElementAt(0).GetComponent<ScriptChain>();
+                    //scriptChain = chainList.ElementAt(0).GetComponent<ScriptChain>();
+                    scriptChain= chainList.ElementAt(Random.Range(0,chainList.Count()-1)).GetComponent<ScriptChain>();
                     scriptChain.free = false;
                     manager.createClient = false;
                     refClient.StatusOrder = ClientState.sit;
