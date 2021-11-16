@@ -19,5 +19,6 @@ public class testNavigation : MonoBehaviour
     void Update()
     {
         navMeshAgent.SetDestination(point.position);
+        //navMeshAgent.
     }
 }

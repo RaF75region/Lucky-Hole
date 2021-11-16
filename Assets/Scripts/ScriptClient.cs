@@ -70,6 +70,7 @@ public class ScriptClient : MonoBehaviour
                     scriptChain.free = false;
                     manager.createClient = false;
                     refClient.StatusOrder = ClientState.sit;
+                    manager.ChangeChaing(gameObject, scriptChain.gameObject);
                 }
                 break;
             case ClientState.sit:
@@ -116,7 +117,8 @@ public class ScriptClient : MonoBehaviour
     {
         if (other.gameObject == scriptChain.gameObject)
         {
-            manager.ChangeChaing(gameObject, scriptChain.gameObject);
+            //NavMeshObstacle obs = other.gameObject.GetComponent<NavMeshObstacle>();
+            //obs.enabled = false;
             navMeshAgent.obstacleAvoidanceType = ObstacleAvoidanceType.NoObstacleAvoidance;
         }
     }

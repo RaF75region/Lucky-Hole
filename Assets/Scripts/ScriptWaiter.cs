@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.AI;
 using System.Linq;
+using UnityEngine.Animations;
 
 public class ScriptWaiter : MonoBehaviour
 {
@@ -14,11 +15,18 @@ public class ScriptWaiter : MonoBehaviour
     ClassClient client;
     [SerializeField]
     WaiterState state;
+    Transform mainCamera;
+    RotationConstraint constraintCanvas;
+    Slider slider;
 
     private void Start()
     {
         manager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>(); //GetComponent<GameManager>();
         agent = GetComponent<NavMeshAgent>();
+        mainCamera= GameObject.FindGameObjectWithTag("MainCamera").transform;
+        constraintCanvas = transform.GetChild(0).GetComponent<RotationConstraint>();
+        slider = transform.GetChild(0).GetChild(0).GetComponent<Slider>();
+        rotationFixedUI();
     }
     void Update()
     {
@@ -35,9 +43,25 @@ public class ScriptWaiter : MonoBehaviour
                 if (clientGameObj)
                 {
                     agent.SetDestination(clientGameObj.transform.position);
-                    state = WaiterState.idle;
+                    //state = WaiterState.idle;
+                    //if (agent.isStopped)
+                    //{
+                    //    state = WaiterState.toTakeOrder;
+                    //}
                 }
                 break;
+            case WaiterState.toTakeOrder:
+                SliderToActive();
+                break;
+        }
+    }
+
+    private void SliderToActive()
+    {
+        slider.gameObject.SetActive(true);
+        if (!slider.GetComponent<ChangeColor>().trigger)
+        {
+            slider.GetComponent<ChangeColor>().trigger = true;
         }
     }
 
@@ -59,7 +83,19 @@ public class ScriptWaiter : MonoBehaviour
         {
             agent.isStopped = true;
             client.StatusOrder = ClientState.transferOrder;
-            state = WaiterState.idle;
+            state = WaiterState.toTakeOrder;
         }
     }
+
+    #region fixed rotation
+    private void rotationFixedUI()
+    {
+        ConstraintSource constraintSource = new ConstraintSource();
+        constraintSource.sourceTransform = mainCamera;
+        constraintSource.weight = 1;
+        constraintCanvas.AddSource(constraintSource);
+        constraintCanvas.locked = true;
+        constraintCanvas.constraintActive = true;
+    }
+    #endregion
 }
