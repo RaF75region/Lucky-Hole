@@ -117,8 +117,8 @@ public class ScriptClient : MonoBehaviour
     {
         if (other.gameObject == scriptChain.gameObject)
         {
-            //NavMeshObstacle obs = other.gameObject.GetComponent<NavMeshObstacle>();
-            //obs.enabled = false;
+            NavMeshObstacle obs = other.gameObject.GetComponent<NavMeshObstacle>();
+            obs.carving = false;
             navMeshAgent.obstacleAvoidanceType = ObstacleAvoidanceType.NoObstacleAvoidance;
         }
     }

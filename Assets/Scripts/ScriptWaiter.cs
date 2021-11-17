@@ -8,6 +8,8 @@ using UnityEngine.Animations;
 
 public class ScriptWaiter : MonoBehaviour
 {
+    public Transform Cook;
+
     GameManager manager;
     NavMeshAgent agent;
     GameObject clientGameObj;
@@ -44,14 +46,16 @@ public class ScriptWaiter : MonoBehaviour
                 {
                     agent.SetDestination(clientGameObj.transform.position);
                     //state = WaiterState.idle;
-                    //if (agent.isStopped)
-                    //{
-                    //    state = WaiterState.toTakeOrder;
-                    //}
+                    if (agent.isStopped)
+                    {
+                        
+                    }
                 }
                 break;
             case WaiterState.toTakeOrder:
                 SliderToActive();
+                break;
+            case WaiterState.moveCook:
                 break;
         }
     }
@@ -62,6 +66,10 @@ public class ScriptWaiter : MonoBehaviour
         if (!slider.GetComponent<ChangeColor>().trigger)
         {
             slider.GetComponent<ChangeColor>().trigger = true;
+            if (slider.value == slider.maxValue)
+            {
+                state = WaiterState.moveCook;
+            }
         }
     }
 
