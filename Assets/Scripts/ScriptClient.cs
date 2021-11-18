@@ -34,6 +34,7 @@ public class ScriptClient : MonoBehaviour
         refClient = manager.clients.Where(p => p.ObjClient == gameObject).ElementAt(0);//ссылка на текущего клиента из списка
         slider = transform.GetChild(0).GetChild(0).GetComponent<Slider>();
         constraintCanvas = transform.GetChild(0).GetComponent<RotationConstraint>();
+        navMeshObs = GetComponent<NavMeshObstacle>();
         rotationFixedUI();
     }
     
@@ -78,7 +79,9 @@ public class ScriptClient : MonoBehaviour
                 navMeshAgent.destination = scriptChain.gameObject.transform.position;
                 if (!navMeshAgent.pathPending && navMeshAgent.remainingDistance.Equals(0))
                 {
-                    refClient.StatusOrder = ClientState.thinkOrder;   
+                    refClient.StatusOrder = ClientState.thinkOrder;
+                    navMeshAgent.enabled = false;
+                    ObstacleChange(true, true);
                 }
                 break;
             case ClientState.thinkOrder:
@@ -118,5 +121,11 @@ public class ScriptClient : MonoBehaviour
             obs.carving = false;
             navMeshAgent.obstacleAvoidanceType = ObstacleAvoidanceType.NoObstacleAvoidance;
         }
+    }
+
+    private void ObstacleChange(bool carv, bool enabl)
+    {
+        navMeshObs.carving = carv;
+        navMeshObs.enabled = enabl;
     }
 }

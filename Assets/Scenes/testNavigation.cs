@@ -20,5 +20,10 @@ public class testNavigation : MonoBehaviour
     {
         navMeshAgent.SetDestination(point.position);
         //navMeshAgent.
+        if (navMeshAgent.pathPending)
+        {
+            print("bum");
+        }
     }
+
 }

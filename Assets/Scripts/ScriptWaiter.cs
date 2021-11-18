@@ -20,6 +20,7 @@ public class ScriptWaiter : MonoBehaviour
     Transform mainCamera;
     RotationConstraint constraintCanvas;
     Slider slider;
+    bool moveCook = false;
 
     private void Start()
     {
@@ -44,12 +45,7 @@ public class ScriptWaiter : MonoBehaviour
             case WaiterState.moveClient:
                 if (clientGameObj)
                 {
-                    agent.SetDestination(clientGameObj.transform.position);
-                    //state = WaiterState.idle;
-                    if (agent.isStopped)
-                    {
-                        
-                    }
+                    agent.destination = clientGameObj.transform.position;
                 }
                 break;
             case WaiterState.toTakeOrder:
@@ -69,20 +65,29 @@ public class ScriptWaiter : MonoBehaviour
             if (slider.value == slider.maxValue)
             {
                 state = WaiterState.moveCook;
+                moveCook = true;
             }
         }
     }
 
     private void OnMouseUp()
     {
-        IEnumerable<ClassClient> greenClient = manager.clients.Where(p => p.StatusOrder == ClientState.waitWaiter && !p.Dish);
-        if (!greenClient.Count().Equals(0))
+        if (!moveCook)
         {
-            client = greenClient.ElementAt(Random.Range(0, greenClient.Count() - 1));
-            clientGameObj = client.ObjClient;
-            chain = client.Chain;
-            state = WaiterState.moveClient;
-        } 
+            IEnumerable<ClassClient> greenClient = manager.clients.Where(p => p.StatusOrder == ClientState.waitWaiter && !p.Dish);
+            if (!greenClient.Count().Equals(0))
+            {
+                client = greenClient.ElementAt(Random.Range(0, greenClient.Count() - 1));
+                clientGameObj = client.ObjClient;
+                chain = client.Chain;
+                state = WaiterState.moveClient;
+            }
+        }
+        else
+        {
+            agent.isStopped = false;
+            agent.destination = Cook.position;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -92,6 +97,9 @@ public class ScriptWaiter : MonoBehaviour
             agent.isStopped = true;
             client.StatusOrder = ClientState.transferOrder;
             state = WaiterState.toTakeOrder;
+        } else if (other.gameObject.tag.Equals("Table") && moveCook)
+        {
+            agent.isStopped = true;
         }
     }
 
