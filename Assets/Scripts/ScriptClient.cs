@@ -75,12 +75,9 @@ public class ScriptClient : MonoBehaviour
                 break;
             case ClientState.sit:
                 navMeshAgent = GetComponent<NavMeshAgent>();
-                navMeshAgent.SetDestination(scriptChain.gameObject.transform.position);
-                
+                navMeshAgent.destination = scriptChain.gameObject.transform.position;
                 if (!navMeshAgent.pathPending && navMeshAgent.remainingDistance.Equals(0))
                 {
-                    navMeshObs = gameObject.GetComponent<NavMeshObstacle>();
-                    navMeshObs.enabled = true;
                     refClient.StatusOrder = ClientState.thinkOrder;   
                 }
                 break;

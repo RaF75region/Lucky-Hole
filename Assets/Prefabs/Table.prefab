@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 4875666961733887039}
   - component: {fileID: 2508601735139664219}
   - component: {fileID: 7844858327348961530}
+  - component: {fileID: 249806066090431616}
   m_Layer: 3
   m_Name: Chain (5)
   m_TagString: Chain
@@ -225,7 +226,7 @@ SphereCollider:
   m_GameObject: {fileID: 4816740886937793314}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0.00000023841858}
@@ -261,6 +262,19 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!65 &249806066090431616
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4816740886937793314}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0.00000023841858}
 --- !u!1 &4816740887292669555
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,6 +290,7 @@ GameObject:
   - component: {fileID: 7852637458523138246}
   - component: {fileID: 1259220975046070949}
   - component: {fileID: 2846733343746786170}
+  - component: {fileID: 703128212161423426}
   m_Layer: 3
   m_Name: Chain (4)
   m_TagString: Chain
@@ -368,7 +383,7 @@ SphereCollider:
   m_GameObject: {fileID: 4816740887292669555}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -404,6 +419,19 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!65 &703128212161423426
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4816740887292669555}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4816740887629501305
 GameObject:
   m_ObjectHideFlags: 0
@@ -419,6 +447,7 @@ GameObject:
   - component: {fileID: 7106420519668492065}
   - component: {fileID: 8725869755951979561}
   - component: {fileID: 6995843103109802734}
+  - component: {fileID: 2378733594090413006}
   m_Layer: 3
   m_Name: Chain (3)
   m_TagString: Chain
@@ -511,7 +540,7 @@ SphereCollider:
   m_GameObject: {fileID: 4816740887629501305}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -547,6 +576,19 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!65 &2378733594090413006
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4816740887629501305}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4816740887985858555
 GameObject:
   m_ObjectHideFlags: 0
@@ -562,6 +604,7 @@ GameObject:
   - component: {fileID: 1693444469687565017}
   - component: {fileID: 5669647024458413881}
   - component: {fileID: 3808867161344231902}
+  - component: {fileID: 964327503736557902}
   m_Layer: 3
   m_Name: Chain
   m_TagString: Chain
@@ -654,7 +697,7 @@ SphereCollider:
   m_GameObject: {fileID: 4816740887985858555}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0.00000047683716}
@@ -690,6 +733,19 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!65 &964327503736557902
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4816740887985858555}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0.00000047683716}
 --- !u!1 &4816740888488064496
 GameObject:
   m_ObjectHideFlags: 0
@@ -705,6 +761,7 @@ GameObject:
   - component: {fileID: 398444970972319152}
   - component: {fileID: 426927889568730707}
   - component: {fileID: 4882074362205487979}
+  - component: {fileID: 328004002213254889}
   m_Layer: 3
   m_Name: Chain (1)
   m_TagString: Chain
@@ -797,7 +854,7 @@ SphereCollider:
   m_GameObject: {fileID: 4816740888488064496}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -833,6 +890,19 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!65 &328004002213254889
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4816740888488064496}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4816740888926191900
 GameObject:
   m_ObjectHideFlags: 0
@@ -848,6 +918,7 @@ GameObject:
   - component: {fileID: 1791272275477906452}
   - component: {fileID: 7595861978679248466}
   - component: {fileID: 8428856081194136714}
+  - component: {fileID: 8567690650618590195}
   m_Layer: 3
   m_Name: Chain (2)
   m_TagString: Chain
@@ -940,7 +1011,7 @@ SphereCollider:
   m_GameObject: {fileID: 4816740888926191900}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0.00000047683716}
@@ -976,3 +1047,16 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!65 &8567690650618590195
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4816740888926191900}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0.00000047683716}
